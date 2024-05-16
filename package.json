@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "expres": "^0.0.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.3.3"
+  }
+}
