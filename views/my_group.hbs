@@ -1,0 +1,28 @@
+<div>{{name}}</div>
+<div>{{id}}</div>
+<form action="/new_task" method="POST">
+    <label>
+        <input name="new_task" placeholder="Enter name of task">
+        <input name="id" value={{id}} type="hidden">
+        <input name="id_group" value={{id_group}} type="hidden">
+        <input name="id" value={{name}} type="hidden">
+        <button class="btn btn-small" type="submit">Create</button>
+    </label>
+</form>
+{{#if all_groups.length}}
+
+{{#each all_groups}}
+{{!-- show each todos from db --}}
+<li class="todo">
+    <form action="/go_group" method="POST">
+        <label>
+            <button class="btn btn-small">{{group_name}}</button>
+            <input type="hidden" value="{{_id}}" name="id">
+        </label>
+    </form>
+</li>
+{{/each}}
+
+{{else}}
+<p>No tasks!</p>
+{{/if}}
