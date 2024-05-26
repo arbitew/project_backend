@@ -1,0 +1,25 @@
+<div>{{name}}</div>
+<div>{{id}}</div>
+<div>{{group_name}}</div>
+{{#if all_tasks.length}}
+
+{{#each all_tasks}}
+{{!-- show each todos from db --}}
+<li class="todo">
+    <form action="/save_tasks" method="POST">
+        <label>
+            {{#if completed}}
+            {{else}}
+            <input type="checkbox" name="completed">
+            <span>{{title}}</span>
+            <input type="hidden" value="{{_id_task}}" name="id_task">
+            <button class="btn btn-small" type="submit">Save</button>
+            {{/if}}
+        </label>
+    </form>
+</li>
+{{/each}}
+
+{{else}}
+<p>No tasks!</p>
+{{/if}}
