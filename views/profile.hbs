@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div>{{name}}</div>
+<div>
+
+{{#ifCond ava '==' 1}}
+    <img src="images/image1.png"/>
+{{/ifCond}}
+{{#ifCond ava '==' 2}}
+    <img src="images/image2.png"/>
+{{/ifCond}}
+{{#ifCond ava '==' 3}}
+    <img src="images/image3.png"/>
+{{/ifCond}}
+</div>
+{{ava}}
+<div>{{satiety}}</div>
+</body>
+
+</html>
