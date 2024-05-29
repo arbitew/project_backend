@@ -1,0 +1,37 @@
+<div>{{name}}</div>
+<div>{{id}}</div>
+<form action="/profile" method="POST">
+    <label>
+        <input name="name" value={{name}} type="hidden">
+        <input name="password" value={{password}} type="hidden">
+        <button class="btn btn-small" type="submit">Profile</button>
+    </label>
+</form>
+<form action="/main_page" method="POST">
+    <label>
+        <input name="new_group" placeholder="Enter name of group">
+        <input name="id" value={{id}} type="hidden">
+        <input name="name" value={{name}} type="hidden">
+        <input name="password" value={{password}} type="hidden">
+        <button class="btn btn-small" type="submit">Create</button>
+    </label>
+</form>
+{{#if all_groups.length}}
+
+{{#each all_groups}}
+{{!-- show each group from db --}}
+<li class="todo">
+    <form action="/go_group" method="POST">
+        <label>
+            <button class="btn btn-small">{{group_name}}</button>
+            <input type="hidden" value="{{_id}}" name="id_group">
+            <input type="hidden" name="name" value={{../name}}>
+            <input type="hidden" name="password" value={{../password}}>
+        </label>
+    </form>
+</li>
+{{/each}}
+
+{{else}}
+<p>No groups!</p>
+{{/if}}

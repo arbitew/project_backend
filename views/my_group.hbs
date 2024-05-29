@@ -1,0 +1,37 @@
+<div>{{name}}</div>
+<div>{{id}}</div>
+<div>{{group_name}}</div>
+<form action="/new_task" method="POST">
+    <label>
+        <input name="new_task" placeholder="Enter task">
+        <input type="hidden" name="id_group" value={{id_group}}>
+        <input type="hidden" name="name" value={{name}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button class="btn btn-small" type="submit">Create</button>
+    </label>
+</form>
+{{#if all_tasks.length}}
+
+{{#each all_tasks}}
+{{!-- show each todos from db --}}
+<li class="todo">
+    <form action="/save_tasks" method="POST">
+        <label>
+            {{#if completed}}
+            {{else}}
+            <input type="checkbox" name="completed">
+            <span>{{task}}</span>
+            <input type="hidden" value="{{_id}}" name="id_task">
+            <input type="hidden" value="{{../name}}" name="name">
+            <input type="hidden" value="{{../password}}" name="password">
+            <input type="hidden" value="{{../id_group}}" name="id_group">
+            <button class="btn btn-small" type="submit">Save</button>
+            {{/if}}
+        </label>
+    </form>
+</li>
+{{/each}}
+
+{{else}}
+<p>No tasks!</p>
+{{/if}}
