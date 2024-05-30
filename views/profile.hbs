@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/profile.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="base">My character</div>  
+    </div>
+
+    <div class="container">
+        <div class="bar">
+            <a href="/profile.html"> <img class = "icons" src="/images/icons8-кот-100.png" width="70px"> </a>
+            <a href = "/main_page.html"> <img class = "iconsM" src="images/icons8-меню-100.png" width="70px"> </a>
+            <a href="/sign_in.html"> <img class = "icons" src="images/icons8-exit-100.png" width="70px"> </a>
+            
+        </div>
+        <div class="character_box">
+                {{#ifCond ava '==' 1}}
+                <img class ="avatar" src="images/image1.png" alt="" width="300px" height="350px"/>
+                {{/ifCond}}
+                {{#ifCond ava '==' 2}}
+                    <img class ="avatar" src="images/image2.png" alt="" width="300px" height="350px"/>
+                {{/ifCond}}
+                {{#ifCond ava '==' 3}}
+                    <img class ="avatar" src="images/image3.png"alt="" width="300px" height="350px" />
+                {{/ifCond}}
+            <span class="mood">
+                <div class="nameProfile">Name:{{name}}</div> 
+                <br>
+                <span class="prob"> </span>
+                <span class="mood1">Mood:</span>
+                <span class="sati">{{satiety}}</span>
+                <span class="circle"></span>
+                <div class="tasks">There are fulfuilled task!</div>
+            </span>
+        </div>
+    </div>
+</body>
+    <script src="/public/satiety_op.js"></script>
+
+</html>

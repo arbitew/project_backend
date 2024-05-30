@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/group.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="bar">
+            <a href="/profile.html"> <img class = "icons" src="/images/icons8-кот-100.png" width="70px"> </a>
+            <a href = "/main_page.html"> <img class = "iconsM" src="images/icons8-меню-100.png" width="70px"> </a>
+            <a href="/sign_in.html"> <img class = "icons" src="images/icons8-exit-100.png" width="70px"> </a>
+            
+        </div>
+            <div class="character_box">
+                <div class = "tasText">TASKS</div>
+                <div class = "tasText">Group: {{group_name}}</div>
+                    {{!-- <div>{{name}}</div>
+                    <div>{{id}}</div>
+                    <div>{{group_name}}</div> --}}
+                    {{#if all_tasks.length}}
+
+                    {{#each all_tasks}}
+                    {{!-- show each todos from db --}}
+                    <li class="todo">
+                        <form action="/save_tasks" method="POST">
+                                {{#if completed}}
+                                {{else}}
+                                <input type="checkbox" name="completed">
+                                <span>{{task}}</span>
+                                <input type="hidden" value="{{_id}}" name="id_task">
+                                <input type="hidden" value="{{../name}}" name="name">
+                                <input type="hidden" value="{{../password}}" name="password">
+                                <input type="hidden" value="{{../id_group}}" name="id_group">
+                                <button class="btn-hover color-7" type="submit">Save</button>
+                                {{/if}}
+                        </form>
+                    </li>
+                    {{/each}}
+
+                    {{else}}
+                    <p>No tasks!</p>
+
+                    {{/if}}
+            </div>
+    </div>
+</body>
+
+</html>
