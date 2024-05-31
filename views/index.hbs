@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="character_box">
+            <div class="text_creatac">
+                <label class="label_reg">Create account</label>
+                <h4 class="label_sig">Already have an account? <a href="/sign_in" target="_blank">Sign in</a></h4>
+            </div>
+            <form class="forma" action="/" method="POST">
+                <label>
+                    <input class="login" type="text" name="login" placeholder="Enter login">
+                    <input class="name" type="text" name="name" placeholder="Enter name">
+                    <input class="password" name="password" placeholder="Enter password">
+                    <select class="avatars" name="ava">
+                        <option value=0 disabled selected></option>
+                        <option value=1 style="background-image:url(images/image1.png);"> Avatar 1 </option>
+                        <option value=2 style="background-image:url(images/image2.png);"> Avatar 2 </option>
+                        <option value=3 style="background-image:url(images/image3.png);"> Avatar 3 </option>
+                    </select>
+                    <button class="btn-hover color-7" type="submit">Register</button>
+                </label>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
